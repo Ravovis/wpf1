@@ -7,15 +7,46 @@
         mc:Ignorable="d"
         Title="Punch Club" Height="400" Width="550">
     <Grid x:Name="LayoutRoot" Background="White">
-        <Button Width="100" Height="30" Content="JUST KICK HIM!" ></Button>
-        <Label Width="100" Height="30" Content="Attack" Margin="10,224,432,115"></Label>
-        <RadioButton GroupName="Attack"  Width="100" Height="30" Margin="110,259,332,80" Content="Head" ></RadioButton>
-        <RadioButton GroupName="Attack"  Width="100" Height="30" Margin="110,294,332,45" Content="Body" ></RadioButton>
-        <RadioButton GroupName="Attack"  Width="100" Height="30" Margin="110,329,332,10" Content="Legs" ></RadioButton>
-        <Label Width="100" Height="30" Content="Defence" Margin="110,224,332,115" ></Label>
-        <RadioButton GroupName="Defence"  Width="100" Height="30" Margin="10,259,432,80" Content="Head" ></RadioButton>
-        <RadioButton GroupName="Defence"  Width="100" Height="30" Margin="10,294,432,45" Content="Body" ></RadioButton>
-        <RadioButton GroupName="Defence"  Width="100" Height="30" Margin="10,329,432,10" Content="Legs" ></RadioButton>
+        <Button x:Name="KickButton"
+            Width="100" Height="30" Content="JUST KICK HIM!" Click="Kick" ></Button>
+
+        <Label HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+            Width="100" Height="30" Content="Attack" Margin="110,0,0,110"></Label>
+        <RadioButton   x:Name="HeadAttackButton" x:FieldModifier="public" Checked="RadioAttackButton_Checked"
+                       GroupName="Attack"  HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                     Width="100" Height="30" Margin="110,0,0,80" Content="Head" />
+        <RadioButton x:Name="BodyAttackButton" Checked="RadioAttackButton_Checked"
+                     GroupName="Attack"  HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                     Width="100" Height="30" Margin="110,0,0,45" Content="Body" />
+        <RadioButton x:Name="LegsAttackButton" Checked="RadioAttackButton_Checked"
+                     GroupName="Attack"  HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                     Width="100" Height="30" Margin="110,0,0,10" Content="Legs" />
         
+
+        <Label HorizontalAlignment="Left" VerticalAlignment="Bottom"
+            Width="100" Height="30" Content="Defence" Margin="10,0,0,110" ></Label>
+        <RadioButton x:Name="HeadDefenceButton" Checked="RadioDefenceButton_Checked"
+                     GroupName="Defence"  HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                     Width="100" Height="30" Margin="10,0,0,80" Content="Head" ></RadioButton>
+        <RadioButton x:Name="BodyDefenceButton"  Checked="RadioDefenceButton_Checked"
+                     GroupName="Defence"  HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                     Width="100" Height="30" Margin="10,0,0,45" Content="Body" ></RadioButton>
+        <RadioButton x:Name="LegsDefenceButton"  Checked="RadioDefenceButton_Checked"
+                     GroupName="Defence"  HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                     Width="100" Height="30" Margin="10,0,0,10" Content="Legs" ></RadioButton>
+
+
+        <TextBox x:Name ="PlayerBox" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                 Width="100" Height="30" IsEnabled="false" Margin="0,0,173,10"></TextBox>
+        <TextBox x:Name ="EnemyBox"  HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                 Width="100" Height="30" IsEnabled="false" Margin="0,0,54,10"></TextBox>
+        <Label  HorizontalAlignment="Right" VerticalAlignment="Bottom"
+            Width="100" Height="30" Content="Player" Margin="0,0,149,40"></Label>
+        <Label  HorizontalAlignment="Right" VerticalAlignment="Bottom"
+            Width="100" Height="30" Content="Enemy" Margin="0,0,32,40" ></Label>
+
+        <Label x:Name="InfoLabel" x:FieldModifier="public"
+               FontSize="18" FontStyle="Italic"  HorizontalAlignment="Right" VerticalAlignment="Bottom"
+               Width="300" Height="90" Content="" Margin="0,0,10,65" ></Label>
     </Grid>
 </Window>
